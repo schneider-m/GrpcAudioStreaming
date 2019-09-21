@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcAudioStreaming.Server", "GrpcAudioStreaming.Server\GrpcAudioStreaming.Server.csproj", "{200D0DD0-1918-43BB-B35F-2956FAF6BC17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcAudioStreaming.Client", "GrpcAudioStreaming.Client\GrpcAudioStreaming.Client.csproj", "{516269B8-376C-49F9-9B6D-8D8C8D492543}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{200D0DD0-1918-43BB-B35F-2956FAF6BC17}.Release|x64.Build.0 = Release|Any CPU
 		{200D0DD0-1918-43BB-B35F-2956FAF6BC17}.Release|x86.ActiveCfg = Release|Any CPU
 		{200D0DD0-1918-43BB-B35F-2956FAF6BC17}.Release|x86.Build.0 = Release|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Debug|x64.Build.0 = Debug|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Debug|x86.Build.0 = Debug|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Release|x64.ActiveCfg = Release|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Release|x64.Build.0 = Release|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Release|x86.ActiveCfg = Release|Any CPU
+		{516269B8-376C-49F9-9B6D-8D8C8D492543}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
