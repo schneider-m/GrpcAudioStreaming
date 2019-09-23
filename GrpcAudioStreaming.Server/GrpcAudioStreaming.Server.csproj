@@ -6,10 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore.Server" Version="0.2.23-pre2" />
+    <PackageReference Include="NAudio" Version="1.9.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GrpcAudioStreaming.Proto\GrpcAudioStreaming.Proto.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="wav\file_example_WAV_1MG.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

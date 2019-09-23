@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Grpc.Net.Client;
 
@@ -15,12 +16,13 @@ namespace GrpcAudioStreaming.Client
 
             // The port number(5001) must match the port of the gRPC server.
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new Greeter.GreeterClient(channel);
-            var replies = client.SayHello(new HelloRequest {Name = "GreeterClient", Count = 10});
+            var client = new AudioStream.AudioStreamClient(channel);
+            var format = client.GetFormat(new Empty());
+            var audioStream = client.GetStream(new Empty());
 
-            await foreach (var reply in replies.ResponseStream.ReadAllAsync())
+            await foreach (var sample in audioStream.ResponseStream.ReadAllAsync())
             {
-                Console.WriteLine("Greeting: " + reply.Message);
+                Console.WriteLine("Timestamp: " + sample.Timestamp);
             }
 
             Console.WriteLine("Press any key to exit...");

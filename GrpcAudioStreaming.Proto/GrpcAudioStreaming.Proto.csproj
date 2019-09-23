@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Protobuf Include="greet.proto" GrpcServices="Both" />
+        <Protobuf Include="audioStreaming.proto" GrpcServices="Both" />
     </ItemGroup>
 
 </Project>

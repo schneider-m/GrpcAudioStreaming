@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GrpcAudioStreaming.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace GrpcAudioStreaming
+namespace GrpcAudioStreaming.Server
 {
     public class Startup
     {
@@ -17,6 +14,7 @@ namespace GrpcAudioStreaming
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGrpc();
+            services.AddSingleton<IAudioSampleSource>(new AudioSampleSource(@"wav\file_example_WAV_1MG.wav"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,7 +29,7 @@ namespace GrpcAudioStreaming
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<AudioStreamService>();
 
                 endpoints.MapGet("/", async context =>
                 {
