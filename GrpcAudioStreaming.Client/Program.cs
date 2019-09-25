@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Grpc.Net.Client;
@@ -20,13 +19,13 @@ namespace GrpcAudioStreaming.Client
             var format = client.GetFormat(new Empty());
             var audioStream = client.GetStream(new Empty());
 
+            using var audioPlayer = new AudioPlayer(format.ToWaveFormat());
+            audioPlayer.Play();
+
             await foreach (var sample in audioStream.ResponseStream.ReadAllAsync())
             {
-                Console.WriteLine("Timestamp: " + sample.Timestamp);
+                audioPlayer.AddSample(sample.Data.ToByteArray());
             }
-
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
         }
     }
 }
