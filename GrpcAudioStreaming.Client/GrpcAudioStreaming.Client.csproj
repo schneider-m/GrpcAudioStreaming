@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Grpc.Net.Client" Version="0.2.23-pre2" />
+      <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
       <PackageReference Include="NAudio" Version="1.9.0" />
     </ItemGroup>
 
